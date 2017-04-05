@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>Formulaire</title>
+    <link rel="stylesheet" href="./static/css/style.css">
+    <link rel="stylesheet" href="./static/external/bootstrap/dist/css/bootstrap.min.css">
+    <!-- <link rel="stylesheet" href="./static/external/font-awesome/css/font-awesome.css"> -->
+    <!-- <link rel="stylesheet" href="./static/external/bootstrap/"> -->
+
+
+
+</head>
+
+<body>
+    <form id="form1">
+        <h1>Formulaire interactif</h1>
+        <div class="form-group row">
+            <label class="col-sm-2 col-form-label">Name</label>
+            <div class="col-sm-8">
+                <input type="text" class="form-control" id="inputName" placeholder="Name" required>
+            </div>
+        </div>
+
+        <div class="form-group row">
+            <label for="pass_1" class="col-sm-2 col-form-label">Password</label>
+            <div class="col-sm-8">
+                <input type="password" id="password" class="form-control first" placeholder="Password" autofocus required maxlength="20">
+                <div class="progress progress-striped active">
+                    <div id="jak_pstrength" class="progress-bar" role="progressbar" aria-valuenow="0" aria-valuemin="8" aria-valuemax="20" style="width: 0%"></div>
+                </div>
+            </div>
+        </div>
+
+        <div class="form-group row">
+            <label for="pass_2" class="col-sm-2 col-form-label">Confirm Password</label>
+            <div class="col-sm-8">
+                <input type="password" class="form-control last" placeholder="Confirm Password" id="pass_2" required maxlength="20">
+            </div>
+        </div>
+
+        <div class="form-group row">
+            <label class="col-sm-2 col-form-label">Email</label>
+            <div class="col-sm-8">
+                <input type="email" class="form-control form-control-lg" id="lgFormGroupInput" placeholder="you@example.com" required>
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="col-md-9 col-md-offset-2">
+                <input class="reset" type="reset" name="envoyer" value="Reset" />
+                <button type="submit" class="btn btn-primary" id="btnSubmit">Submit</button>
+            </div>
+        </div>
+    </form>
+
+
+
+
+    <script src="./static/external/jquery/dist/jquery.min.js" type="text/javascript"></script>
+    <script src="./static/external/bootstrap/dist/js/bootstrap.min.js" charset="utf-8"></script>
+
+    <script src="./static/js/script.js" charset="utf-8"></script>
+    <script src="./static/js/jaktutorial.js" charset="utf-8"></script>
+    <script type="text/javascript">
+        $(document).ready(function() {
+            $("#password").keyup(function() {
+                passwordStrength($(this).val());
+            });
+
+            $(function() {
+                $("#btnSubmit").click(function() {
+                    var password = $("#password").val();
+                    var confirmPassword = $("#pass_2").val();
+
+                    if ($('#inputName').val().length < 5) {
+
+                        alert("le nom doit avoir au moins 5 caractères");
+                        $('#inputName').css({
+                            border: '1px solid red'
+                        });
+                        $('#inputName').val('');
+                        return false
+                    }
+                    if (password.length < 8) {
+                        $('#password').css({
+                            border: '1px solid red'
+                        });
+
+                        alert("Password doit avoir au moins 8 caractères")
+
+
+                        return false
+                    }
+                    if (password != confirmPassword) {
+                        $('#password').css({
+                            border: '1px solid red'
+                        });
+                        $("#password").val('');
+                        $('#pass_2').val('');
+                        alert("No coinciden las contraseñas");
+                        return false;
+
+                    }
+
+                    return true;
+                });
+            });
+
+
+        });
+    </script>
+</body>
+
+</html>

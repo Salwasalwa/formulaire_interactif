@@ -1,0 +1,35 @@
+body {
+    background-color: black !important;
+}
+
+form {
+    margin-bottom: 0.5em;
+    padding: 2em;
+    width: 60%;
+    margin: auto;
+    background-color: rgb(236, 138, 107);
+    color:rgb(57, 23, 4);
+    min-height: 1000px;
+}
+
+h1 {
+    text-align: center;
+    padding-bottom: 1em;
+    font-size: 30px;
+    font-weight: bold !important;
+}
+.progress {
+    margin-top: 0.5em;
+}
+
+[type='reset'] {
+    background-color: red;
+    height: 30px;
+    border: none;
+    /*margin-left: 18%*/
+}
+
+[type='submit'] {
+    /*margin-left: 5%;*/
+    background-color: blue;
+}

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>Formulaire</title>
+    <link rel="stylesheet" href="./static/css/style.css">
+    <link rel="stylesheet" href="./static/external/bootstrap/dist/css/bootstrap.min.css">
+
+
+    
+    <!-- <link rel="stylesheet" href="./static/external/font-awesome/css/font-awesome.css"> -->
+
+    <!-- <link rel="stylesheet" href="./static/external/bootstrap-validator/"> -->
+
+
+
+</head>
+
+<body>
+
+    <form class="cmxform" id="commentForm" method="get" action="">
+        <fieldset>
+            <legend>Please provide your name, email address (won't be published) and a comment</legend>
+            <p>
+                <label for="cname">Name (required, at least 6 characters)</label>
+                <input id="cname" name="name" minlength="6" type="text" required>
+            </p>
+            <p>
+                <label for="cemail">E-Mail (required)</label>
+                <input id="cemail" type="email" name="email" required>
+            </p>
+            <p>
+                <label for="curl">URL (optional)</label>
+                <input id="curl" type="url" name="url">
+            </p>
+            <p>
+                <label for="ccomment">Your comment (required)</label>
+                <textarea id="ccomment" name="comment" required></textarea>
+            </p>
+            <p>
+                <input class="submit" type="submit" value="Submit">
+            </p>
+        </fieldset>
+    </form>
+
+
+
+    <script src="./static/external/jquery/dist/jquery.min.js" type="text/javascript"></script>
+    <script src="./static/external/bootstrap/dist/js/bootstrap.min.js" charset="utf-8"></script>
+
+    <script src="./static/js/script.js" charset="utf-8"></script>
+    <script src="./static/external/bootstrap-validator/dist/validator.min.js" charset="utf-8"></script>
+
+    <script src="./static/external/jquery-form-validator/form-validator/jquery.form-validator.min.js" charset="utf-8"></script>
+    <script type="text/javascript">
+        $("#commentForm").validate();
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,14 @@
+{
+  "name": "formvalidation",
+  "_cacheHeaders": {
+    "ETag": "\"1b857ea6921aa8014d2ac3f368ad69e0\"",
+    "Last-Modified": "Thu, 28 Jul 2016 18:55:01 GMT",
+    "Content-Length": "14522",
+    "Content-Type": "text/html"
+  },
+  "_release": "e-tag:1b857ea69",
+  "main": "index.io",
+  "_source": "http://formvalidation.io/",
+  "_target": "*",
+  "_originalSource": "http://formvalidation.io/"
+}
